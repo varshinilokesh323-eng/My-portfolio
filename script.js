@@ -7,7 +7,9 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     message: document.getElementById("message").value
   };
 
-  const res = await fetch("https://my-portfolio-backend-s8iy.onrender.com/api/contact", {
+  const API_URL = "https://my-portfolio-backend-s8iy.onrender.com";
+
+const res = await fetch(`${API_URL}/api/contact`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
