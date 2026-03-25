@@ -21,12 +21,13 @@
 
     section {
       padding: 40px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
     h2 {
       color: #333;
+      margin-top: 30px;
     }
 
     .card {
@@ -34,7 +35,15 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-top: 20px;
+      margin-top: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 8px 0;
     }
 
     input, textarea {
@@ -73,12 +82,58 @@
 </header>
 
 <section>
+
   <h2>About Me</h2>
   <div class="card">
     <p>
       I am a web developer skilled in frontend and backend technologies.
       This portfolio demonstrates database connectivity using MySQL.
     </p>
+  </div>
+
+  <h2>Interests & Hobbies</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Interests:</strong> Sports, Drawing</li>
+      <li><strong>Hobbies:</strong> Professional makeup artist</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Class 10:</strong> 89% - St. Annes Girls High School</li>
+      <li><strong>Class 12:</strong> 85% - Baldwin's pre university college</li>
+    </ul>
+  </div>
+
+  <h2>Certifications</h2>
+  <div class="card">
+    <ul>
+      <li>MongoDB Certification</li>
+      <li>NASSCOM Certification</li>
+      <li>Infosys Certification</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="card">
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Node.js, Express.js</li>
+      <li>MySQL, MongoDB</li>
+      <li>Git, REST APIs</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="card">
+    <ul>
+      <li>Portfolio Website (this site)</li>
+      <li>Student Enrollment System</li>
+      <li>E-commerce Store with Cart</li>
+      <li>Task Manager with Authentication</li>
+    </ul>
   </div>
 
   <h2>Contact Me</h2>
@@ -91,34 +146,10 @@
     </form>
     <p id="response"></p>
   </div>
+
 </section>
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const data = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      const text = await res.text();
-      document.getElementById("response").innerText = text;
-    } catch (error) {
-      document.getElementById("response").innerText = "Error connecting to server";
-    }
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
