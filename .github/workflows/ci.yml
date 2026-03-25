@@ -19,7 +19,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
+        working-directory: backend   # ✅ FIX
         run: npm install
 
       - name: Run server (test)
-        run: node backend/server.js
+        working-directory: backend   # ✅ FIX
+        run: node server.js
+        
