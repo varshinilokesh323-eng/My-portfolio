@@ -15,6 +15,11 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     body: JSON.stringify(data)
   });
 
+  if(!res.ok) {
+    throw new Error("Request failed");
+  }
+
+
   const text = await res.text();
   document.getElementById("response").innerText = text;
 });
