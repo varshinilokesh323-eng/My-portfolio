@@ -23,5 +23,8 @@ const res = await fetch(`${API_URL}/api/contact`, {
 
 
   const text = await res.text();
-  document.getElementById("response").innerText = text;
+  alert(text);
+
+  // Clear form
+  document.getElementById("contactForm").reset();
 });
