@@ -9,7 +9,7 @@ router.post("/contact", (req, res) => {
 
   db.query(sql, [name, email, message], (err, result) => {
     if (err) {
-      console.error(err);
+      console.error("Insert error:", err);
       return res.send("Error saving data ❌");
     }
 
