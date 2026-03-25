@@ -7,7 +7,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     message: document.getElementById("message").value
   };
 
-  const res = await fetch("http://localhost:5000/api/contact", {
+  const res = await fetch("https://my-portfolio-backend-s8iy.onrender.com/api/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
